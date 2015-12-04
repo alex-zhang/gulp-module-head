@@ -30,7 +30,7 @@ return gulp.src('app/*')
       header: function(f) {
         return 'This is Header \n';
       },
-      footer: function() {
+      footer: function(f) {
         return 'n\This is Footer';
       }
     }));
@@ -50,7 +50,7 @@ return gulp.src('app/*')
       header: function(f) {
         return new Buffer(30);
       },
-      footer: function() {
+      footer: function(f) {
         return Buffer(20);
       }
     }));
