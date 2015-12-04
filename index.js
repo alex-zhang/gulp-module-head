@@ -5,13 +5,13 @@ var gulpUtil       = require('gulp-util');
 
 module.exports = function(opt) {
 
-  function getBufferFromObj(obj) {
+  function getBufferFromObj(obj, fileRef) {
     if(Buffer.isBuffer(obj)) {
       return obj;
     } else if (typeof obj === 'string') {
       return new Buffer(obj);
     } else if(typeof obj === 'function') {
-      return getBufferFromObj(obj());
+      return getBufferFromObj(obj(), fileRef);
     }
     return null;
   }
@@ -25,9 +25,9 @@ module.exports = function(opt) {
       return callback(new PluginError('gulp-wrapper', 'Streaming not supported'));
     }
 
-    var headerBuffer = (opt && opt.header) ? getBufferFromObj(opt.header) : null;
+    var headerBuffer = (opt && opt.header) ? getBufferFromObj(opt.header, file) : null;
     var fileBuffer = file.contents;
-    var footerBuffer = (opt && opt.footer) ? getBufferFromObj(opt.footer) : null;
+    var footerBuffer = (opt && opt.footer) ? getBufferFromObj(opt.footer, file) : null;
 
     var bufferSize = 0;
     if(headerBuffer) {
