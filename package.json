@@ -1,5 +1,5 @@
 {
-  "name": "gulp-module-head",
+  "name": "gulp-wrapper",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,16 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alex-zhang/gulp-module-head.git"
+    "url": "https://github.com/alex-zhang/gulp-wrapper.git"
   },
   "author": "alex.zhang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alex-zhang/gulp-module-head/issues"
+    "url": "https://github.com/alex-zhang/gulp-wrapper/issues"
   },
-  "homepage": "https://github.com/alex-zhang/gulp-module-head",
+  "homepage": "https://github.com/alex-zhang/gulp-wrapper",
   "dependencies": {
-    "through": "^2.3.8"
+    "gulp-util": "^3.0.7",
+    "through": "^2.3.8",
+    "through2": "^2.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0"
