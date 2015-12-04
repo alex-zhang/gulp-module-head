@@ -1,6 +1,7 @@
 'use strict';
 
 var through2 = require("through2");
+var gulpUtil       = require('gulp-util');
 
 module.exports = function(opt) {
 
@@ -21,7 +22,7 @@ module.exports = function(opt) {
     }
 
     if (file.isStream()) {
-      return callback(new Error('Streaming not supported'));
+      return callback(new PluginError('gulp-wrapper', 'Streaming not supported'));
     }
 
     var headerBuffer = (opt && opt.header) ? getBufferFromObj(opt.header) : null;
