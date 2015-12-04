@@ -11,7 +11,7 @@ module.exports = function(opt) {
     } else if (typeof obj === 'string') {
       return new Buffer(obj);
     } else if(typeof obj === 'function') {
-      return getBufferFromObj(obj(), fileRef);
+      return getBufferFromObj(obj(fileRef), fileRef);
     }
     return null;
   }
