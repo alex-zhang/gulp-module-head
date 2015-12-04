@@ -1,22 +1,22 @@
-gulp-wrapper
+gulp-wrapper2
 ==============
 
 > add contents before or after file contents. 
 
 ## Install
 ```
-npm install --save-dev gulp-wrapper
+npm install --save-dev gulp-wrapper2
 ```
 
 ## Usage
 
 ```js
 var gulp = require('gulp');
-var wrapper = require('gulp-wrapper');
+var wrapper2 = require('gulp-wrapper2');
 
 gulp.task('default', function () {
   return gulp.src('app/*')
-    .pipe(wrapper({
+    .pipe(wrapper2({
       header: 'This is Header \n',
       footer: 'n\This is Footer'
     }));
@@ -26,7 +26,7 @@ gulp.task('default', function () {
 
 ```js
 return gulp.src('app/*')
-    .pipe(wrapper({
+    .pipe(wrapper2({
       header: function(f) {
         return 'This is Header \n';
       },
@@ -38,7 +38,7 @@ return gulp.src('app/*')
 
 ```js
 return gulp.src('app/*')
-    .pipe(wrapper({
+    .pipe(wrapper2({
       header: new Buffer(30),
       footer: new Buffer(20)
     }));
@@ -46,7 +46,7 @@ return gulp.src('app/*')
 
 ```js
 return gulp.src('app/*')
-    .pipe(wrapper({
+    .pipe(wrapper2({
       header: function(f) {
         return new Buffer(30);
       },
@@ -58,4 +58,4 @@ return gulp.src('app/*')
 
 ## License
 
-gulp-wrapper.js is [MIT Licensed](./LICENSE.md).
+gulp-wrapper2.js is [MIT Licensed](./LICENSE.md).
